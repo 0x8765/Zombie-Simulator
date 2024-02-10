@@ -2,6 +2,7 @@ let CoteCellule = 1;
 const NombreInfectes = 0;
 const NombreSurvivants = 0;
 const NombreDocs = 0;
+let DoctorSoinRay = 10;
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -171,7 +172,7 @@ function Soin(x,y) {
   for (let i = 0; i < entites.length; i++) {
 
     let distance = Math.sqrt(((entites[i][1]-x)**2)+((entites[i][0]-y)**2));
-    if (distance < 10) {
+    if (distance < DoctorSoinRay) {
       if (distance>0){
         if (!(entites[i][2]=="mort")) {
           if(SurvivorImunity) {entites[i][2]="imunisé"} else {entites[i][2]="survivant"}
