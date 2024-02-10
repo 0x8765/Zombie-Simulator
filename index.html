@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Zombie Simulator</title>    <link href="css/main.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1>Zombie Simulator</h1>
+    <h5 id="counter"></h5>
+    <div class="CanvasBox">
+      <div class="Parametres">
+        <h3>Paramètres :</h3>
+
+        <h4><b>Matrice :</b></h4>
+
+        <div id="selectbox">
+          <label id="taillecel_select_label">Taille Cellule (px) :</label>
+  
+          <select id="taillecel_select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+
+        </div>
+        
+        <div id="selectbox">
+          <label id="taillecel_select_label">Ajouter des Survivant :</label>
+          
+          <select id="addsurvivor">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+          </select>
+          <button onclick="AddSurvivants();">Ajouter</button>
+        </div>
+
+        <div id="selectbox">
+          <label id="taillecel_select_label">Ajouter des Infectés :</label>
+  
+          <select id="addinfected">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+          </select>
+          <button onclick="AddInfectes();">Ajouter</button>
+        </div>
+
+        <div id="selectbox">
+          <label id="taillecel_select_label">Ajouter des Docteurs :</label>
+  
+          <select id="adddoctors">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+          </select>
+          <button onclick="AddDocs();">Ajouter</button>
+        </div>
+
+        <div>
+          <div class="BoxLegend">
+            <p id="Infectes"></p>
+            <p><b>Les Infectés :</b></p>
+          </div>
+  
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="InfectPeuvMour" />
+            <label for="scales">Les Infectés peuvent mourir naturellement.</label>
+          </div>
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="InfectPeuvCourir" />
+            <label for="scales">Les Infectés peuvent taper des sprint de fou.</label>
+          </div>
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="InfectPeuvSoignerTTSeul" />
+            <label for="scales">Les Infectés ont une chance de se soigner tout seul.</label>
+          </div>
+        </div>
+
+        <div>
+          <div class="BoxLegend">
+            <p id="Survivant"></p>
+            <p><b>Les Survivant :</b></p>
+          </div>
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="SurvivorToDoctor" />
+            <label for="scales">Les Survivants peuvent se transformer en Docteur.</label>
+          </div>
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="SurvivorToInfect"  />
+            <label for="scales">Les Survivant peuvent devenir des Infectés.</label>
+          </div>
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="SurvivorChild"   />
+            <label for="scales">Les Survivant peuvent faire des bébés.</label>
+          </div>
+          <div class="textLegend">
+            <input type="checkbox" class="check" id="SurvivorImunity" />
+            <label for="scales">Les Survivant peuvent développer une imunité après avoir été infecté.</label>
+          </div>
+        </div>
+
+        <div class="BoxLegend">
+          <p id="Docteur"></p>
+          <p><b>Les Docteurs :</b></p>
+        </div>
+
+        <div class="BoxLegend">
+          <p id="Mort"></p>
+          <p><b>Les Morts :</b></p>
+        </div>
+        
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+
+
+
+    <!-- JS PLUGINS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
