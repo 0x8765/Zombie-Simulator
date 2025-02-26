@@ -1,4 +1,4 @@
-let CoteCellule = 1;
+let CoteCellule = 5;
 const NombreInfectes = 0;
 const NombreSurvivants = 0;
 const NombreDocs = 0;
