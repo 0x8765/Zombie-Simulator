@@ -240,8 +240,8 @@ function drawMatrice() {
       ctx.fillRect(entites[i][1]*CoteCellule, entites[i][0]*CoteCellule, CoteCellule, CoteCellule);
     }
   }
-  setTimeout(function() {drawMatrice();}, 100 );
+  setTimeout(drawMatrice, 100 );
 }
 
 
-setTimeout(function() {drawMatrice();}, 10 );
+setTimeout(drawMatrice, 10 );
